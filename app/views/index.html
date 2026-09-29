@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qué hay en esta imagen</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="bench">
+    <header>
+      <h1>Qué hay en esta imagen</h1>
+      <p class="lead">Subí una foto y el modelo la describe o responde tus preguntas. Todo corre en tu propia PC, sin enviar nada a internet.</p>
+    </header>
+
+    <div class="layout">
+      <label class="drop" id="drop">
+        <input class="sr-only" type="file" id="file" accept="image/*">
+        <img id="preview" alt="Vista previa de la imagen elegida" hidden>
+        <span class="hint" id="hint">Arrastrá una imagen acá o hacé clic para elegirla</span>
+      </label>
+
+      <div class="side">
+        <form id="form">
+          <fieldset class="mode">
+            <legend class="sr-only">Qué querés hacer</legend>
+            <label><input type="radio" name="mode" value="describe" checked><span>Describir</span></label>
+            <label><input type="radio" name="mode" value="ask"><span>Preguntar</span></label>
+          </fieldset>
+
+          <div class="field" id="q-wrap" hidden>
+            <label for="question">Tu pregunta sobre la imagen</label>
+            <input type="text" id="question" maxlength="300" placeholder="¿Cuántas personas hay?">
+          </div>
+
+          <button class="go" id="go" type="submit" disabled>Analizar imagen</button>
+        </form>
+
+        <section class="caption" aria-live="polite">
+          <p id="result" class="empty">Elegí una imagen para empezar.</p>
+          <p id="meta" class="meta"></p>
+        </section>
+      </div>
+    </div>
+
+    <footer class="status" id="status">Conectando con el modelo…</footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

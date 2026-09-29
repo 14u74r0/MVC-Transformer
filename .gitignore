@@ -1,0 +1,11 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+.idea/
+.vscode/
+# Pesos del modelo: se descargan solos en cada PC
+.cache/
+*.safetensors
+*.bin
